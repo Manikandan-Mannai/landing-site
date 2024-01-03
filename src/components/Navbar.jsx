@@ -25,7 +25,7 @@ const Navbar = () => {
         <img src={BackgroundImage} alt="" srcset="" />
       </BackgroundImageContainer>
       <StyledNavbar>
-        <div className="logo"><img src={Logo} /></div>
+        <div className="logo"><img src={Logo} alt="logo"/></div>
         <nav>
           <button
             className={`menu-toggle ${isMenuOpen ? "open" : ""}`}

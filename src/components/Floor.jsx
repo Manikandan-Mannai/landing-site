@@ -39,6 +39,7 @@ const Floor = () => {
           {FloorImages.map((item, index) => (
             <div key={index}>
               <img
+                alt='carousel'
                 src={item.image}
               />
               <h3>{item.name}</h3>
