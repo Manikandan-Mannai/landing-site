@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import styled from 'styled-components';
 import ISRO from '../assets/ISRO.png';
 import Community from '../assets/community.png';
@@ -6,13 +6,19 @@ import Income from '../assets/income.png';
 import Entrance from '../assets/entrance.png';
 import Companies from '../assets/companies.png';
 import School from '../assets/school.png';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const TimeLine = () => {
+  useEffect(() => {
+    AOS.init({ duration: 2000 })
+  }, [])
+
   return (
     <ParentContainer>
       <h1>What makes us Different ?</h1>
       <Container>
-        <Box>
+        <Box data-aos="fade-right">
           <Left>
             <ImageContainer>
               <Image src={ISRO} alt="Property in Tada with a view of ISRO Space Station Launch Pad." />
@@ -27,7 +33,7 @@ const TimeLine = () => {
             </TextContainerRight>
           </Right>
         </Box>
-        <Box>
+        <Box data-aos="fade-left">
           <TextContainerLeft>
             <Left>
               <h2>Largest Gated Community</h2>
@@ -42,7 +48,7 @@ const TimeLine = () => {
             </ImageContainer>
           </Right>
         </Box>
-        <Box>
+        <Box data-aos="fade-right">
           <Left>
             <ImageContainer>
               <Image src={Income} alt="Opportunity for rental property income." />
@@ -57,7 +63,7 @@ const TimeLine = () => {
             </TextContainerRight>
           </Right>
         </Box>
-        <Box>
+        <Box data-aos="fade-left">
           <TextContainerLeft>
             <Left>
               <h2>Strategic Location</h2>
@@ -72,7 +78,7 @@ const TimeLine = () => {
             </ImageContainer>
           </Right>
         </Box>
-        <Box>
+        <Box data-aos="fade-right">
           <Left>
             <ImageContainer>
               <Image src={Companies} alt="150+ companies within 5 minutes." />
@@ -87,7 +93,7 @@ const TimeLine = () => {
             </TextContainerRight>
           </Right>
         </Box>
-        <Box>
+        <Box data-aos="fade-left">
           <TextContainerLeft>
             <Left>
               <h2>Education Hub</h2>
@@ -114,7 +120,7 @@ const ParentContainer = styled.div`
   h1{
     text-align: center;
     color: var(--secondary-color);
-    padding: 10px 0px;
+    padding: 25px 0px;
   }
     @media only screen and (max-width: 768px) {
     width: 100%;

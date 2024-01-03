@@ -1,8 +1,15 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import styled from 'styled-components';
 import { Aminites } from './data';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const Amenities = () => {
+
+  useEffect(() => {
+    AOS.init({ duration: 2000 })
+  }, [])
+
   return (
     <>
       <Container id='amenities'>
@@ -10,8 +17,8 @@ const Amenities = () => {
           <h1>Amenities</h1>
           <CardsContainer>
             {Aminites.map((amenity) => (
-              <Card key={amenity.id}>
-                <h3>{amenity.name}</h3>
+              <Card key={amenity.id} data-aos="fade-right">
+                <p>{amenity.name}</p>
               </Card>
             ))}
           </CardsContainer>

@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap');
-
 :root {
   --primary-color: #04385C;
   --secondary-color: #FBF7E5;
@@ -9,24 +7,42 @@
 
 * {
   margin: 0;
-  padding: 0px;
+  padding: 0;
   box-sizing: border-box;
   text-decoration: none;
 }
 
-body {
-  min-height: 100vh;
-  font-family: 'Libre Baskerville', serif;
-  overflow-x: hidden;
+html {
+  scroll-behavior: smooth;
 }
 
-h1 {
+body {
+  min-height: 100vh;
+  overflow-x: hidden ;
+  font-family: 'Helvetica';
+}
+
+h1{
   font-size: 72px;
+  line-height: 1;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Prettywise Serif', serif;
+}
+
+@font-face {
+  font-family: 'Prettywise Serif';
+  src: url('../public/Fontspring-DEMO-prettywise-regular.otf');
 }
 
 @media only screen and (max-width: 768px) {
   h1 {
     font-size: 42px;
   }
-
 }

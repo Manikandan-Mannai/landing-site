@@ -40,8 +40,6 @@ const Floor = () => {
             <div key={index}>
               <img
                 src={item.image}
-                alt={`Floor Image ${index}`}
-                role="presentation"
               />
               <h3>{item.name}</h3>
             </div>

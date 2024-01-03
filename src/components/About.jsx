@@ -1,12 +1,19 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import styled from 'styled-components';
 import AboutImage from '../assets/test.jpg';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const About = () => {
+
+  useEffect(() => {
+    AOS.init({ duration: 2000 })
+  }, [])
+
   return (
     <Container id='about'>
       <Left>
-        <Box>
+        <Box data-aos="fade-right">
           <p>Your Space</p>
           <p>Your Story</p>
           <p>Our Expertise</p>
@@ -15,7 +22,7 @@ const About = () => {
           <img src={AboutImage} alt="About" />
         </ImageContainer>
       </Left>
-      <Right>
+      <Right data-aos="fade-left">
         <Line />
         <div>
           <h1>About</h1>
@@ -38,7 +45,7 @@ export default About;
 
 const Container = styled.div`
   width: 100vw;
-  max-height: 100vh;
+  height: 80vh;
   padding: 20px 104px;
   display: flex;
   align-items: center;

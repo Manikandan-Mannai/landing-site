@@ -5,30 +5,27 @@ import { faqData } from './data';
 const Container = styled.div`
   width: 100vw;
   max-height: 100vh;
-  padding: 0px 104px;
+  padding: 0px 20px; /* Adjust padding for smaller screens */
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   margin-top: 10%;
-@media only screen and (max-width: 768px) {
-  padding: 20px;
 
-  h1{
-    text-align: center;
+  @media only screen and (min-width: 769px) {
+    padding: 0px 104px;
   }
-}
 `;
 
-
 const FAQWrapper = styled.div`
-  max-width: 800px;
+  width: 100%;
   margin: 20px auto;
-  padding: 20px;   
-
+  padding: 20px;
+  max-width: 800px;
 `;
 
 const FAQItem = styled.div`
+  width: 100%;
   margin-bottom: 20px;
 `;
 
@@ -42,14 +39,18 @@ const Question = styled.div`
   justify-content: space-between;
   align-items: center;
   transition: background-color 200ms ease-in-out;
+  width: 100%;
 `;
 
 const Answer = styled.div`
+  max-height: ${(props) => (props.visible ? '1000px' : '0')};
+  overflow: hidden;
   margin-top: 10px;
   display: ${(props) => (props.visible ? 'block' : 'none')};
   padding: 10px;
   border-top: 1px solid #ddd;
-  transition: display 200ms ease-in-out, opacity 300ms ease-in-out;
+  transition: max-height 300ms ease-in-out, opacity 300ms ease-in-out;
+  width: 100%;
 `;
 
 const Arrow = styled.span`
@@ -74,7 +75,10 @@ const FAQ = () => {
       <FAQWrapper>
         {faqData.map((faq, index) => (
           <FAQItem key={index}>
-            <Question onClick={() => toggleQuestion(index)} active={activeQuestions.includes(index)}>
+            <Question
+              onClick={() => toggleQuestion(index)}
+              active={activeQuestions.includes(index)}
+            >
               {faq.question}
               <Arrow active={activeQuestions.includes(index)}>▼</Arrow>
             </Question>

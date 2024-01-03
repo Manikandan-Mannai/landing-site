@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import BackgroundImage from '../assets/test3.jpg'
+import Logo from '../assets/logo.png'
 
 const Navbar = () => {
   const [showNavLinks, setShowNavLinks] = useState(false);
@@ -24,7 +25,7 @@ const Navbar = () => {
         <img src={BackgroundImage} alt="" srcset="" />
       </BackgroundImageContainer>
       <StyledNavbar>
-        <div className="logo">Logo</div>
+        <div className="logo"><img src={Logo} /></div>
         <nav>
           <button
             className={`menu-toggle ${isMenuOpen ? "open" : ""}`}
@@ -67,10 +68,10 @@ const Navbar = () => {
       <HeroSection id="home">
         <TextContainer>
           <h1>
-            WHERE SERENE LIVING
+            Where Serene Living
           </h1>
           <h1>
-            TAKES FLIGHT
+            Takes Flight
           </h1>
         </TextContainer>
         <div id="container">
@@ -138,6 +139,13 @@ const StyledNavbar = styled.nav`
   border-radius: 16px;
   margin: 20px auto;
   box-sizing: border-box; 
+
+  .logo{
+    width: 50px;
+  }
+  img{
+    width: 100%;
+  }
     .nav-links {
       list-style: none;
       display: flex;
@@ -244,10 +252,10 @@ const HeroSection = styled.div`
     text-align: center;
   }
 
-  h1 {
+  /* h1 {
     font-size: 2rem;
     margin-bottom: 1rem;
-  }
+  } */
 
   p {
     font-size: 1.5rem;
@@ -322,7 +330,7 @@ const DownloadBtn = styled.button`
     bottom: 0;
     padding: 0.75rem 0;
     margin: 0 0 0 1.85rem;
-    color: transparent;
+    color: WHITE;
     font-weight: 700;
     line-height: 1.6;
     text-align: center;

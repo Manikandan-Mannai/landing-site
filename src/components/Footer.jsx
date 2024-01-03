@@ -8,9 +8,9 @@ const Footer = () => {
       <FooterContent>
         <Left>
           <FooterHeading>Contact Us</FooterHeading>
-          <p>Plot no: 206 - Lake View Serenity
-            Pudi (Opposite Sricity Entrance), Tada - 524401. Tirupathi District, Andhra Pradesh.
-            Landmark: Sricity Zero Point</p>
+          <p>Plot no: 206 - Lake View Serenity</p>
+          <p>Pudi (Opposite Sricity Entrance), Tada - 524401. Tirupathi District, Andhra Pradesh.</p>
+          <p>Landmark: Sricity Zero Point</p>
           <p>Email: kalpana@kllifespace.com</p>
           <p>Phone: +91 7901333332</p>
         </Left>
