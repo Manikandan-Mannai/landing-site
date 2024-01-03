@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { timeline } from "./data";
 
 const Container = styled.div`
-  padding: 20px 20px;
+  padding: 20px 0px;
   background-color: var(--primary-color);
 
   h1 {
@@ -23,7 +23,7 @@ const Box = styled.div`
   justify-content: center;
 
   gap: 1rem;
-  @media (max-width: 750px) {
+  @media (max-width: 1000px) {
     flex-direction: ${({ condition }) =>
       condition % 2 === 1 ? "column-reverse" : "column"};
   }
@@ -60,7 +60,7 @@ const Image = styled.img`
   width: 100%;
   height: 100%;
   object-fit: contain;
-  box-shadow: 0px 0px 8px 1px gray;
+  box-shadow: 1px 0px 8px 1px rgb(0,0,0,0.5);
 `;
 
 const Line = styled.div`
