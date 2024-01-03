@@ -1,197 +1,218 @@
 import React from 'react';
 import styled from 'styled-components';
-import ISRO from '../assets/ISRO.png'
-import Community from '../assets/community.png'
-import Income from '../assets/income.png'
-import Entrance from '../assets/entrance.png'
-import Companies from '../assets/companies.png'
-import School from '../assets/school.png'
-
+import ISRO from '../assets/ISRO.png';
+import Community from '../assets/community.png';
+import Income from '../assets/income.png';
+import Entrance from '../assets/entrance.png';
+import Companies from '../assets/companies.png';
+import School from '../assets/school.png';
 
 const TimeLine = () => {
   return (
-    <Container>
-      <Box>
-        <Left>
-          <ImageContainer>
-            <Image src={ISRO} alt="Property in Tada with a view of ISRO Space Station Launch Pad." />
-          </ImageContainer>
-        </Left>
-        <Divider />
-        <Right>
-          <TextContainerRight>
-            <h1>Unique Location</h1>
-            <Line />
-            <h3>Property in Tada with a view of ISRO Space Station Launch Pad.</h3>
-          </TextContainerRight>
-        </Right>
-      </Box>
-      <Box>
-        <TextContainerLeft>
+    <ParentContainer>
+      <h1>What makes us Different ?</h1>
+      <Container>
+        <Box>
           <Left>
-            <h1>Largest Gated Community</h1>
-            <Line />
-            <h3>Spanning 21 acres, the largest in SriCity Tada.</h3>
+            <ImageContainer>
+              <Image src={ISRO} alt="Property in Tada with a view of ISRO Space Station Launch Pad." />
+            </ImageContainer>
           </Left>
-        </TextContainerLeft>
-        <Divider />
-        <Right>
-          <ImageContainer>
-            <Image src={Community} alt="Spanning 21 acres, the largest in SriCity Tada." />
-          </ImageContainer>
-        </Right>
-      </Box>
-      <Box>
-        <Left>
-          <ImageContainer>
-            <Image src={Income} alt="Opportunity for rental property income." />
-          </ImageContainer>
-        </Left>
-        <Divider />
-        <Right>
-          <TextContainerRight>
-            <h1>Rental Income</h1>
-            <Line />
-            <h3>Opportunity for rental property income.</h3>
-          </TextContainerRight>
-        </Right>
-      </Box>
-      <Box>
-        <TextContainerLeft>
+          <Divider />
+          <Right>
+            <TextContainerRight>
+              <h2>Unique Location</h2>
+              <Line />
+              <p>Property in Tada with a view of ISRO Space Station Launch Pad.</p>
+            </TextContainerRight>
+          </Right>
+        </Box>
+        <Box>
+          <TextContainerLeft>
+            <Left>
+              <h2>Largest Gated Community</h2>
+              <Line />
+              <p>Spanning 21 acres, the largest in SriCity Tada.</p>
+            </Left>
+          </TextContainerLeft>
+          <Divider />
+          <Right>
+            <ImageContainer>
+              <Image src={Community} alt="Spanning 21 acres, the largest in SriCity Tada." />
+            </ImageContainer>
+          </Right>
+        </Box>
+        <Box>
           <Left>
-            <h1>Strategic Location</h1>
-            <Line />
-            <h3>Opposite SriCity entrance, providing easy access.</h3>
+            <ImageContainer>
+              <Image src={Income} alt="Opportunity for rental property income." />
+            </ImageContainer>
           </Left>
-        </TextContainerLeft>
-        <Divider />
-        <Right>
-          <ImageContainer>
-            <Image src={Entrance} alt="Opposite SriCity entrance, providing easy access." />
-          </ImageContainer>
-        </Right>
-      </Box>
-      <Box>
-        <Left>
-          <ImageContainer>
-            <Image src={Companies} alt="150+ companies within 5 minutes." />
-          </ImageContainer>
-        </Left>
-        <Divider />
-        <Right>
-          <TextContainerRight>
-            <h1>Proximity to Industries</h1>
-            <Line />
-            <h3>150+ companies within 5 minutes.</h3>
-          </TextContainerRight>
-        </Right>
-      </Box>
-      <Box>
-        <TextContainerLeft>
+          <Divider />
+          <Right>
+            <TextContainerRight>
+              <h2>Rental Income</h2>
+              <Line />
+              <p>Opportunity for rental property income.</p>
+            </TextContainerRight>
+          </Right>
+        </Box>
+        <Box>
+          <TextContainerLeft>
+            <Left>
+              <h2>Strategic Location</h2>
+              <Line />
+              <p>Opposite SriCity entrance, providing easy access.</p>
+            </Left>
+          </TextContainerLeft>
+          <Divider />
+          <Right>
+            <ImageContainer>
+              <Image src={Entrance} alt="Opposite SriCity entrance, providing easy access." />
+            </ImageContainer>
+          </Right>
+        </Box>
+        <Box>
           <Left>
-            <h1>Education Hub</h1>
-            <Line />
-            <h3>Access to the best schools and institutions.</h3>
+            <ImageContainer>
+              <Image src={Companies} alt="150+ companies within 5 minutes." />
+            </ImageContainer>
           </Left>
-        </TextContainerLeft>
-        <Divider />
-        <Right>
-          <ImageContainer>
-            <Image src={School} alt="Access to the best schools and institutions." />
-          </ImageContainer>
-        </Right>
-      </Box>
-    </Container>
+          <Divider />
+          <Right>
+            <TextContainerRight>
+              <h2>Proximity to Industries</h2>
+              <Line />
+              <p>150+ companies within 5 minutes.</p>
+            </TextContainerRight>
+          </Right>
+        </Box>
+        <Box>
+          <TextContainerLeft>
+            <Left>
+              <h2>Education Hub</h2>
+              <Line />
+              <p>Access to the best schools and institutions.</p>
+            </Left>
+          </TextContainerLeft>
+          <Divider />
+          <Right>
+            <ImageContainer>
+              <Image src={School} alt="Access to the best schools and institutions." />
+            </ImageContainer>
+          </Right>
+        </Box>
+      </Container>
+    </ParentContainer>
   );
 };
 
 export default TimeLine;
 
-
-const Container = styled.div`
-  width: 100vw;
-  padding: 20px 104px;
+const ParentContainer = styled.div`
   background-color: var(--primary-color);
-
   h1{
-    font-size: 48px;
+    text-align: center;
+    color: var(--secondary-color);
+    padding: 10px 0px;
+  }
+    @media only screen and (max-width: 768px) {
+    width: 100%;
+    padding: 10px;
+    h2{
+      font-size: 36px !important;
+    }
   }
 `;
 
+const Container = styled.div`
+  width: 82vw;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: var(--primary-color);
+  h2{
+    font-size: 46px;
+  }
+
+`;
+
 const Box = styled.div`
-  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
   border: 1px solid white;
+  margin: 20px 0;
+
 `;
 
 const Divider = styled.div`
-  position: absolute;
-  height: 100%;
   width: 1px;
+  height: 100%;
   background-color: #fff;
-`
+`;
 
 const Right = styled.div`
   flex: 1;
-  width: 600px;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: end;
   justify-content: center;
   color: var(--secondary-color);
-  margin: 0px;
-  
-  `;
+`;
 
 const Left = styled.div`
   flex: 1;
-  width: 100%;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: start;
   justify-content: center;
   color: var(--secondary-color);
-  `;
+`;
 
 const ImageContainer = styled.div`
   width: 100%;
-  height: 600px;
-  max-width: 600px;
-`
+  max-width: 500px;
+  height: 300px;
+      @media only screen and (max-width: 768px) {
+    display: none;
+  }
+`;
+
 const Image = styled.img`
   width: 100%;
   height: 100%;
-  object-fit: contain;
-  `
+  object-fit: cover;
+
+`;
 
 const Line = styled.div`
-width: 100px;
-height: 10px;
-background-color: var(--text-color);
-margin-bottom: 30px;
+  width: 80px;
+  height: 5px;
+  background-color: var(--text-color);
+  margin: 15px 5px;
+`;
 
-`
 
 const TextContainerLeft = styled.div`
-display: flex;
-flex-direction: column;
-align-items: start;
-h1,h3{
-  align-self: flex-start;
-  text-align: left;
-  margin: 0;
-}
-`
-
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; 
+  h2,
+  p {
+    align-self: flex-start;
+    text-align: left;
+    margin: 0 5px;
+  }
+`;
 const TextContainerRight = styled.div`
-display: flex;
-flex-direction: column;
-align-items: end;
-h1,h3{
-  align-self: flex-end;
-  text-align: right;
-  margin: 0;
-}
-`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end; 
+  h2,
+  p {
+    align-self: flex-end;
+    text-align: right;
+    margin: 0 5px;
+  }
+`;
+

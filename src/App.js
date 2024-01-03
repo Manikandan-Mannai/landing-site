@@ -1,7 +1,7 @@
 import React from 'react'
 import Navbar from './components/Navbar'
 import About from './components/About'
-import Aminities from './components/Aminities'
+import Amenities from './components/Amenities'
 import StreetViewData from './components/StreetView'
 import Timeline from './components/TimeLine'
 import FAQ from './components/FAQ'
@@ -14,13 +14,13 @@ const App = () => {
     <div>
       <Navbar />
       <About />
-      <Aminities />
+      <Amenities />
       <StreetViewData />
       <Timeline />
       <Floor />
       <Location />
       <FAQ />
-      <Footer />
+      <Footer/>
     </div>
   )
 }

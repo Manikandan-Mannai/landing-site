@@ -5,8 +5,6 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import { FloorImages } from './data';
 
-
-
 const Floor = () => {
   const settings = {
     dots: true,
@@ -52,29 +50,37 @@ const Floor = () => {
       </Right>
     </FloorSection>
   );
-
 };
 
 export default Floor;
 
 const FloorSection = styled.section`
   width: 100vw;
-  min-height: 100vh;
+  max-height: 100vh;
   padding: 20px 104px;
   display: flex;
   align-items: center;
   justify-content: center;
+  @media only screen and (max-width: 768px) {
+    padding: 20px;
+    flex-direction: column;
+  }
+  
 `;
 
 const Left = styled.div`
-  p{
-    padding-right: 100px;
+  p {
+    padding-right: 5%; /* Adjusted for smaller screens */
     text-align: justify;
+  }
+  @media only screen and (max-width: 768px) {
+    p {
+      padding-right: 0;
+    }
   }
 `;
 
-const Right = styled.div`
-`;
+const Right = styled.div``;
 
 const Carousel = styled(Slider)`
   width: 100%;
@@ -107,13 +113,15 @@ const Carousel = styled(Slider)`
     border-radius: 100%;
   }
 
-
+  @media only screen and (max-width: 768px) {
+    margin-top: 25px;
+    max-width: 300px;
+  }
 `;
 
 const Line = styled.div`
-width: 100px;
-height: 10px;
-background-color: var(--primary-color);
-margin-bottom: 10px;
-
-`
+  width: 100px;
+  height: 10px;
+  background-color: var(--primary-color);
+  margin-bottom: 10px;
+`;

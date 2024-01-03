@@ -3,46 +3,52 @@ import styled from 'styled-components';
 import AboutImage from '../assets/test.jpg';
 
 const About = () => {
-    return (
-        <Container>
-            <Left>
-                <Box>
-                    <p>Your Space</p>
-                    <p>Your Story</p>
-                    <p>Our Expertise</p>
-                </Box>
-                <ImageContainer>
-                    <img src={AboutImage} alt="About" />
-                </ImageContainer>
-            </Left>
-            <Right>
-                <Line />
-                <div>
-                    <h1>About</h1>
-                    <h1>The Group</h1>
-                </div>
-                <div>
-                    <p>
-                        Experience elevated living with <span>K&L Life Spaces</span>, a subsidiary of <span>Nakshatra Builders</span> and{' '}
-                        <span>HavinHomes Realty</span>. We specialize in crafting modern luxury living spaces, transforming blueprints into
-                        realities that resonate with sophistication. Join us in creating a future where every structure is infused with
-                        passion, and every space reflects our commitment to crafting exceptional lifestyles.
-                    </p>
-                </div>
-            </Right>
-        </Container>
-    );
+  return (
+    <Container id='about'>
+      <Left>
+        <Box>
+          <p>Your Space</p>
+          <p>Your Story</p>
+          <p>Our Expertise</p>
+        </Box>
+        <ImageContainer>
+          <img src={AboutImage} alt="About" />
+        </ImageContainer>
+      </Left>
+      <Right>
+        <Line />
+        <div>
+          <h1>About</h1>
+          <h1>The Group</h1>
+        </div>
+        <div>
+          <p>
+            Experience elevated living with <span>K&L Life Spaces</span>, a subsidiary of <span>Nakshatra Builders</span> and{' '}
+            <span>HavinHomes Realty</span>. We specialize in crafting modern luxury living spaces, transforming blueprints into
+            realities that resonate with sophistication. Join us in creating a future where every structure is infused with
+            passion, and every space reflects our commitment to crafting exceptional lifestyles.
+          </p>
+        </div>
+      </Right>
+    </Container>
+  );
 };
 
 export default About;
 
 const Container = styled.div`
   width: 100vw;
-  min-height: 100vh;
+  max-height: 100vh;
   padding: 20px 104px;
   display: flex;
   align-items: center;
   justify-content: center;
+  
+  @media only screen and (max-width: 768px) {
+    flex-direction: column;
+    padding: 20px;
+    margin: auto;
+  }
 `;
 
 const Left = styled.div`
@@ -52,8 +58,30 @@ const Left = styled.div`
   flex-direction: column;
   align-items: center;
   text-align: center;
+  
+  @media only screen and (max-width: 768px) {
+    margin-bottom: 25px;
+  }
 `;
 
+const Right = styled.div`
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around ;
+  align-items: start;
+  margin-left: 0;
+  text-align: left;
+  
+  p {
+    text-align: justify;
+  }
+
+  @media only screen and (max-width: 768px) {
+    align-items: end;
+    text-align: right;
+  }
+`;
 
 const ImageContainer = styled.div`
   width: 300px;
@@ -65,20 +93,12 @@ const ImageContainer = styled.div`
     object-fit: cover;
     border-radius: 16px;
   }
-`;
 
-const Right = styled.div`
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around ;
-  align-items: start;
-
-  p{
-    text-align: justify;
+  @media only screen and (max-width: 768px) {
+    width: 200px;
+    height: 280px;
   }
 `;
-
 
 const Box = styled.div`
   position: absolute;
@@ -95,12 +115,19 @@ const Box = styled.div`
   justify-content: center;
   align-items: start;
   padding: 20px; 
+  
+  @media only screen and (max-width: 768px) {
+    left: 30%;
+    transform: translateX(-50%);
+    top: -20%;
+    width: 180px;
+    height: 180px;
+  }
 `;
 
 const Line = styled.div`
-width: 100px;
-height: 10px;
-background-color: var(--primary-color);
-margin-bottom: 10px;
-
-`
+  width: 100px;
+  height: 10px;
+  background-color: var(--primary-color);
+  margin-bottom: 10px;
+`;

@@ -4,12 +4,20 @@ import { faqData } from './data';
 
 const Container = styled.div`
   width: 100vw;
-  min-height: 100vh;
-  padding: 20px 104px;
+  max-height: 100vh;
+  padding: 0px 104px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  margin-top: 10%;
+@media only screen and (max-width: 768px) {
+  padding: 20px;
+
+  h1{
+    text-align: center;
+  }
+}
 `;
 
 

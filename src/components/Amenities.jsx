@@ -2,31 +2,31 @@ import React from 'react';
 import styled from 'styled-components';
 import { Aminites } from './data';
 
-const Aminities = () => {
-    return (
-        <>
-            {/* <h1>Aminities</h1> */}
-            <Container>
-                <Left>
-                    <CardsContainer>
-                        {Aminites.map((amenity) => (
-                            <Card key={amenity.id}>
-                                <h3>{amenity.name}</h3>
-                            </Card>
-                        ))}
-                    </CardsContainer>
-                </Left>
-                <Divider />
-                <Right>
-                    <h2>INDUGLE</h2>
-                    <h2>N LUXURY, EMBRACE SERENITY</h2>
-                </Right>
-            </Container>
-        </>
-    );
+const Amenities = () => {
+  return (
+    <>
+      <Container id='amenities'>
+        <Left>
+          <h1>Amenities</h1>
+          <CardsContainer>
+            {Aminites.map((amenity) => (
+              <Card key={amenity.id}>
+                <h3>{amenity.name}</h3>
+              </Card>
+            ))}
+          </CardsContainer>
+        </Left>
+        <Divider />
+        <Right>
+          <h2>INDUGLE</h2>
+          <h2>N LUXURY, EMBRACE SERENITY</h2>
+        </Right>
+      </Container>
+    </>
+  );
 };
 
-export default Aminities;
+export default Amenities;
 
 const Container = styled.div`
   width: 100vw;
@@ -35,6 +35,13 @@ const Container = styled.div`
   align-items: center;
   justify-content: center;
   background-color: var(--primary-color);
+  h1{
+    color: var(--secondary-color);
+  }
+  @media only screen and (max-width: 1024px) {
+    padding: 20px;
+    flex-direction: column;
+  }
 `;
 
 const CardsContainer = styled.div`
@@ -53,6 +60,7 @@ const Card = styled.div`
   margin: 20px;
   width: 280px;
   cursor: pointer;
+
   img {
     width: 100%;
     height: 120px;
@@ -78,19 +86,31 @@ const Left = styled.div`
 `;
 
 
+
 const Right = styled.div`
   flex: 1;
   display: flex;
   flex-direction: column;
   align-items: end;
 
-  h2{
+  h2 {
     color: var(--secondary-color);
+  }
+
+  @media only screen and (max-width: 768px) {
+    display: none;
+  }
+    @media only screen and (max-width: 1024px) {
+    display: none;
   }
 `;
 
 const Divider = styled.div`
- height: 350px;
- width: 5px;
- background-color: var(--secondary-color);
+  height: 350px;
+  width: 5px;
+  background-color: var(--secondary-color);
+
+  @media only screen and (max-width: 1024px) {
+    display: none;
+  }
 `;
