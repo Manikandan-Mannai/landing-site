@@ -1,121 +1,19 @@
-import React from 'react';
-import styled from 'styled-components';
-import ISRO from '../assets/ISRO.png'
-import Community from '../assets/community.png'
-import Income from '../assets/income.png'
-import Entrance from '../assets/entrance.png'
-import Companies from '../assets/companies.png'
-import School from '../assets/school.png'
-
-
-const TimeLine = () => {
-  return (
-    <Container>
-      <Box>
-        <Left>
-          <ImageContainer>
-            <Image src={ISRO} alt="Property in Tada with a view of ISRO Space Station Launch Pad." />
-          </ImageContainer>
-        </Left>
-        <Divider />
-        <Right>
-          <TextContainerRight>
-            <h1>Unique Location</h1>
-            <Line />
-            <h3>Property in Tada with a view of ISRO Space Station Launch Pad.</h3>
-          </TextContainerRight>
-        </Right>
-      </Box>
-      <Box>
-        <TextContainerLeft>
-          <Left>
-            <h1>Largest Gated Community</h1>
-            <Line />
-            <h3>Spanning 21 acres, the largest in SriCity Tada.</h3>
-          </Left>
-        </TextContainerLeft>
-        <Divider />
-        <Right>
-          <ImageContainer>
-            <Image src={Community} alt="Spanning 21 acres, the largest in SriCity Tada." />
-          </ImageContainer>
-        </Right>
-      </Box>
-      <Box>
-        <Left>
-          <ImageContainer>
-            <Image src={Income} alt="Opportunity for rental property income." />
-          </ImageContainer>
-        </Left>
-        <Divider />
-        <Right>
-          <TextContainerRight>
-            <h1>Rental Income</h1>
-            <Line />
-            <h3>Opportunity for rental property income.</h3>
-          </TextContainerRight>
-        </Right>
-      </Box>
-      <Box>
-        <TextContainerLeft>
-          <Left>
-            <h1>Strategic Location</h1>
-            <Line />
-            <h3>Opposite SriCity entrance, providing easy access.</h3>
-          </Left>
-        </TextContainerLeft>
-        <Divider />
-        <Right>
-          <ImageContainer>
-            <Image src={Entrance} alt="Opposite SriCity entrance, providing easy access." />
-          </ImageContainer>
-        </Right>
-      </Box>
-      <Box>
-        <Left>
-          <ImageContainer>
-            <Image src={Companies} alt="150+ companies within 5 minutes." />
-          </ImageContainer>
-        </Left>
-        <Divider />
-        <Right>
-          <TextContainerRight>
-            <h1>Proximity to Industries</h1>
-            <Line />
-            <h3>150+ companies within 5 minutes.</h3>
-          </TextContainerRight>
-        </Right>
-      </Box>
-      <Box>
-        <TextContainerLeft>
-          <Left>
-            <h1>Education Hub</h1>
-            <Line />
-            <h3>Access to the best schools and institutions.</h3>
-          </Left>
-        </TextContainerLeft>
-        <Divider />
-        <Right>
-          <ImageContainer>
-            <Image src={School} alt="Access to the best schools and institutions." />
-          </ImageContainer>
-        </Right>
-      </Box>
-    </Container>
-  );
-};
-
-export default TimeLine;
-
+import React from "react";
+import styled from "styled-components";
+import { timeline } from "./data";
 
 const Container = styled.div`
-  width: 100vw;
-  padding: 20px 104px;
+  padding: 20px 20px;
   background-color: var(--primary-color);
 
-  h1{
+  h1 {
     font-size: 48px;
   }
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
 `;
 
 const Box = styled.div`
@@ -123,75 +21,137 @@ const Box = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid white;
+
+  gap: 1rem;
+  @media (max-width: 750px) {
+    flex-direction: ${({ condition }) =>
+      condition % 2 === 1 ? "column-reverse" : "column"};
+  }
 `;
 
-const Divider = styled.div`
-  position: absolute;
-  height: 100%;
-  width: 1px;
-  background-color: #fff;
-`
-
 const Right = styled.div`
-  flex: 1;
   width: 600px;
   display: flex;
+  padding: 12px;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  flex-wrap: wrap;
   color: var(--secondary-color);
   margin: 0px;
-  
-  `;
+`;
 
 const Left = styled.div`
-  flex: 1;
-  width: 100%;
+  width: 600px;
+  padding: 12px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   color: var(--secondary-color);
-  `;
+`;
 
 const ImageContainer = styled.div`
   width: 100%;
-  height: 600px;
+  height: max-content;
   max-width: 600px;
-`
+`;
 const Image = styled.img`
   width: 100%;
   height: 100%;
   object-fit: contain;
-  `
+  box-shadow: 0px 0px 8px 1px gray;
+`;
 
 const Line = styled.div`
-width: 100px;
-height: 10px;
-background-color: var(--text-color);
-margin-bottom: 30px;
-
-`
+  width: 100px;
+  height: 10px;
+  background-color: #d0a850;
+  margin-bottom: 30px;
+`;
 
 const TextContainerLeft = styled.div`
-display: flex;
-flex-direction: column;
-align-items: start;
-h1,h3{
-  align-self: flex-start;
-  text-align: left;
-  margin: 0;
-}
-`
+  width: 500px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  h1,
+  h3 {
+    align-self: flex-start;
+    text-align: left;
+    margin: 0;
+  }
+`;
 
 const TextContainerRight = styled.div`
-display: flex;
-flex-direction: column;
-align-items: end;
-h1,h3{
-  align-self: flex-end;
-  text-align: right;
-  margin: 0;
-}
-`
+  width: 500px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  h1,
+  h3 {
+    align-self: flex-end;
+    text-align: right;
+    margin: 0;
+  }
+`;
+
+const InnerContainer = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  justify-content: center;
+  flex-direction: column;
+`;
+
+const TimeLine = () => {
+  return (
+    <Container>
+      <InnerContainer>
+        {timeline.map((item, index) => {
+          return (
+            <Box key={index} condition={index}>
+              {index % 2 === 0 ? (
+                <>
+                  <Left>
+                    <ImageContainer>
+                      <Image src={item.img} alt="" />
+                    </ImageContainer>
+                  </Left>
+
+                  <Right>
+                    <TextContainerLeft>
+                      <h1>{item.header}</h1>
+                      <Line />
+                      <h3>{item.content}</h3>
+                    </TextContainerLeft>
+                  </Right>
+                </>
+              ) : (
+                <>
+                  <Left>
+                    <TextContainerRight>
+                      <h1>{item.header}</h1>
+                      <Line />
+                      <h3>{item.content}</h3>
+                    </TextContainerRight>
+                  </Left>
+
+                  <Right>
+                    <ImageContainer>
+                      <Image src={item.img} alt="" />
+                    </ImageContainer>
+                  </Right>
+                </>
+              )}
+            </Box>
+          );
+        })}
+      </InnerContainer>
+    </Container>
+  );
+};
+
+export default TimeLine;
