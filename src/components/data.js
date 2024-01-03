@@ -6,9 +6,9 @@
 // import Nature from '../src/assets/icons/nature.png'
 // import Senior from '../src/assets/icons/senior.png'
 
-// import GroundFloorImage from './assets/ground floor.png';
-// import FirstFloorImage from '/src/assets/first floor.png';
-// import SecondFloorImage from '/src/assets/second floor.png';
+import GroundFloorImage from '../assets/ground floor.png';
+import FirstFloorImage from '../assets/first floor.png';
+import SecondFloorImage from '../assets/second floor.png';
 
 import EastSideStreetView from '../assets/001.jpg'
 import EastSideFrontView from '../assets/002.jpg'
@@ -158,23 +158,23 @@ export const KeyFeatures = [
 ];
 
 
-// export const FloorImages = [
-//     {
-//         id: 0,
-//         image: GroundFloorImage,
-//         name: 'Ground Floor'
-//     },
-//     {
-//         id: 1,
-//         image: FirstFloorImage,
-//         name: 'First Floor'
-//     },
-//     {
-//         id: 2,
-//         image: SecondFloorImage,
-//         name: 'Second Floor'
-//     }
-// ];
+export const FloorImages = [
+    {
+        id: 0,
+        image: GroundFloorImage,
+        name: 'Ground Floor'
+    },
+    {
+        id: 1,
+        image: FirstFloorImage,
+        name: 'First Floor'
+    },
+    {
+        id: 2,
+        image: SecondFloorImage,
+        name: 'Second Floor'
+    }
+];
 
 export const LocationData = {
     '0-2KM': {
