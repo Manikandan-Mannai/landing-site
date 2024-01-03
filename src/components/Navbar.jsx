@@ -2,11 +2,12 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import BackgroundImage from '../assets/test3.jpg'
 import Logo from '../assets/logo.png'
+import ContactInfo from "./ContactForm";
 
 const Navbar = () => {
   const [showNavLinks, setShowNavLinks] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
+  const [isContactOpen, setIsContactOpen] = useState(false);
 
   const handleMenuToggle = () => {
     setShowNavLinks(!showNavLinks);
@@ -18,14 +19,23 @@ const Navbar = () => {
     setIsMenuOpen(false);
   };
 
+  const handleContactClick = () => {
+    setIsContactOpen(true);
+  };
+
+  const handleCloseContact = () => {
+    setIsContactOpen(false);
+  };
+
+
   return (
-    <StyledContainer>
+    <StyledContainer id="home">
       <Overlay />
       <BackgroundImageContainer>
         <img src={BackgroundImage} alt="" srcset="" />
       </BackgroundImageContainer>
       <StyledNavbar>
-        <div className="logo"><img src={Logo} alt="logo"/></div>
+        <div className="logo"><img src={Logo} alt="logo" /></div>
         <nav>
           <button
             className={`menu-toggle ${isMenuOpen ? "open" : ""}`}
@@ -57,15 +67,14 @@ const Navbar = () => {
                 Street View
               </a>
             </li>
-            {/* Add more navigation links as needed */}
           </ul>
         </nav>
-        <button
-          className="contact-btn"
-        >Contact
+        <button className="contact-btn" onClick={handleContactClick}>
+          Contact
         </button>
       </StyledNavbar>
-      <HeroSection id="home">
+      {isContactOpen && <ContactInfo onClose={handleCloseContact} />}
+      <HeroSection >
         <TextContainer>
           <h1>
             Where Serene Living
@@ -141,7 +150,7 @@ const StyledNavbar = styled.nav`
   box-sizing: border-box; 
 
   .logo{
-    width: 50px;
+    width: 40px;
   }
   img{
     width: 100%;
@@ -155,10 +164,13 @@ const StyledNavbar = styled.nav`
         display: none;
         flex-direction: column;
         position: absolute;
-        top: 81px;
+        top: 100px;
         left: 0;
         width: 100%;
-        background-color: var(--secondary-color);
+        background: rgba(255, 255, 255, 0.2);
+        -webkit-backdrop-filter: blur(30px);
+        backdrop-filter: blur(30px);
+        border-radius: 16px;
         padding: 10px;
         text-align: center;
         z-index: 10;

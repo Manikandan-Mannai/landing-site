@@ -66,7 +66,6 @@ const Card = styled.div`
   text-align: center;
   margin: 20px;
   width: 280px;
-  cursor: pointer;
 
   img {
     width: 100%;

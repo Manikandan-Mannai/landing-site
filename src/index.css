@@ -17,8 +17,9 @@ html {
 }
 
 body {
+  width: 100vw;
   min-height: 100vh;
-  overflow-x: hidden ;
+  overflow-x: hidden;
   font-family: 'Helvetica';
 }
 
@@ -38,7 +39,7 @@ h6 {
 
 @font-face {
   font-family: 'Prettywise Serif';
-  src: url('../public/Fontspring-DEMO-prettywise-regular.otf');
+  src: url('../public/fonts/Fontspring-DEMO-prettywise-regular.otf');
 }
 
 @media only screen and (max-width: 768px) {
