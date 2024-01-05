@@ -5,13 +5,12 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 
 const About = () => {
-
   useEffect(() => {
-    AOS.init({ duration: 2000 })
-  }, [])
+    AOS.init({ duration: 2000 });
+  }, []);
 
   return (
-    <Container id='about'>
+    <Container id="about" role="region" aria-label="About Section">
       <Left>
         <Box data-aos="fade-right">
           <p>Your Space</p>
@@ -22,8 +21,8 @@ const About = () => {
           <img src={AboutImage} alt="About" />
         </ImageContainer>
       </Left>
-      <Right data-aos="fade-left">
-        <Line />
+      <Right data-aos="fade-left" role="group" aria-label="About Content">
+        <Line role="separator" />
         <div>
           <h1>About</h1>
           <h1>The Group</h1>
@@ -45,12 +44,12 @@ export default About;
 
 const Container = styled.div`
   width: 100vw;
-  height: 80vh;
+  max-height: 100vh;
   padding: 20px 104px;
   display: flex;
   align-items: center;
   justify-content: center;
-  
+
   @media only screen and (max-width: 768px) {
     flex-direction: column;
     padding: 20px;
@@ -60,26 +59,25 @@ const Container = styled.div`
 
 const Left = styled.div`
   position: relative;
-  flex: 1;
+  flex-basis: 45%;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  
+
   @media only screen and (max-width: 768px) {
     margin-bottom: 25px;
   }
 `;
 
 const Right = styled.div`
-  flex: 1;
+  flex-basis: 45%;
   display: flex;
   flex-direction: column;
-  justify-content: space-around ;
+  justify-content: space-around;
   align-items: start;
-  margin-left: 0;
   text-align: left;
-  
+
   p {
     text-align: justify;
   }
@@ -87,6 +85,7 @@ const Right = styled.div`
   @media only screen and (max-width: 768px) {
     align-items: end;
     text-align: right;
+    justify-content: center;
   }
 `;
 
@@ -121,8 +120,8 @@ const Box = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: start;
-  padding: 20px; 
-  
+  padding: 20px;
+
   @media only screen and (max-width: 768px) {
     left: 30%;
     transform: translateX(-50%);
@@ -136,5 +135,5 @@ const Line = styled.div`
   width: 100px;
   height: 10px;
   background-color: var(--primary-color);
-  margin-bottom: 10px;
+
 `;

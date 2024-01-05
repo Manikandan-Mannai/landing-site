@@ -8,6 +8,10 @@ import FAQ from './components/FAQ'
 import Footer from './components/Footer'
 import Floor from './components/Floor'
 import Location from './components/Location'
+import Marquee from './components/Marquee'
+import CardCarousel from './components/CardCarousel'
+import UnevenGrid from './components/UnevenGrid'
+
 
 const App = () => {
   return (
@@ -18,7 +22,10 @@ const App = () => {
       <StreetViewData />
       <Timeline />
       <Floor />
+      <Marquee/>
+      <CardCarousel/>
       <Location />
+      <UnevenGrid/>
       <FAQ />
       <Footer/>
     </div>

@@ -1,8 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
-import BackgroundImage from '../assets/test3.jpg'
-import Logo from '../assets/logo.png'
+import BackgroundImage from '../assets/test3.jpg';
+import Logo from '../assets/logo.png';
 import ContactInfo from "./ContactForm";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const Navbar = () => {
   const [showNavLinks, setShowNavLinks] = useState(false);
@@ -27,15 +29,20 @@ const Navbar = () => {
     setIsContactOpen(false);
   };
 
+  useEffect(() => {
+    AOS.init({ duration: 2000 });
+  }, []);
 
   return (
     <StyledContainer id="home">
       <Overlay />
       <BackgroundImageContainer>
-        <img src={BackgroundImage} alt="" srcset="" />
+        <img src={BackgroundImage} alt="" />
       </BackgroundImageContainer>
       <StyledNavbar>
-        <div className="logo"><img src={Logo} alt="logo" /></div>
+        <div className="logo">
+          <img src={Logo} alt="logo" />
+        </div>
         <nav>
           <button
             className={`menu-toggle ${isMenuOpen ? "open" : ""}`}
@@ -74,21 +81,26 @@ const Navbar = () => {
         </button>
       </StyledNavbar>
       {isContactOpen && <ContactInfo onClose={handleCloseContact} />}
-      <HeroSection >
-        <TextContainer>
-          <h1>
-            Where Serene Living
-          </h1>
-          <h1>
-            Takes Flight
-          </h1>
+      <HeroSection>
+        <TextContainer data-aos="fade-right">
+          <div>
+            <p>WELCOME TO</p>
+            <p>TRANQUIL DOVE</p>
+            <p>VILLAS, YOU</p>
+          </div>
+          <h1>GATEWAY</h1>
+          <div>
+            <p>TO</p>
+            <p>LAKESIDE</p>
+            <p>LUXURY</p>
+          </div>
         </TextContainer>
         <div id="container">
           <DownloadBtn className="download">
             <span className="circle">
-              <span class="icon arrow"></span>
+              <span className="icon arrow"></span>
             </span>
-            <span class="button-text">Brochure</span>
+            <span className="button-text">Brochure</span>
           </DownloadBtn>
         </div>
       </HeroSection>
@@ -98,27 +110,30 @@ const Navbar = () => {
 
 export default Navbar;
 
+// Styled components...
+
+
 const StyledContainer = styled.div`
-    position: relative;
-    height: 100vh;
-    overflow: hidden;
-    `;
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+`;
 
 const BackgroundImageContainer = styled.div`
-    position: absolute;
-    top: 0;
-    left: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: -1;
+
+  img {
     width: 100%;
     height: 100%;
-    overflow: hidden;
-    z-index: -1;
-    
-    img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-    `;
+    object-fit: cover;
+  }
+`;
 
 const Overlay = styled.div`
   position: absolute;
@@ -130,7 +145,6 @@ const Overlay = styled.div`
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.7) 70%);
 `;
 
-
 const StyledNavbar = styled.nav`
   position: sticky;
   width: 83%;
@@ -139,142 +153,133 @@ const StyledNavbar = styled.nav`
   justify-content: space-between;
   align-items: center;
   z-index: 999;
-    background: rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.2);
   -webkit-backdrop-filter: blur(30px);
-          backdrop-filter: blur(30px);
+  backdrop-filter: blur(30px);
   border: 2px solid rgba(255, 255, 255, 0.1);
   box-shadow: 0 0 80px rgba(0, 0, 0, 0.2);
-  border: 1px solid #fff;
   border-radius: 16px;
   margin: 20px auto;
-  box-sizing: border-box; 
+  box-sizing: border-box;
 
-  .logo{
-    width: 40px;
+  .logo {
+    width: 50px;
   }
-  img{
+
+  img {
     width: 100%;
   }
-    .nav-links {
-      list-style: none;
-      display: flex;
-      gap: 20px;
 
-      @media only screen and (max-width: 768px) {
-        display: none;
-        flex-direction: column;
-        position: absolute;
-        top: 100px;
-        left: 0;
-        width: 100%;
-        background: rgba(255, 255, 255, 0.2);
-        -webkit-backdrop-filter: blur(30px);
-        backdrop-filter: blur(30px);
-        border-radius: 16px;
-        padding: 10px;
-        text-align: center;
-        z-index: 10;
-      }
+  .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
 
-      &.show {
-        display: flex;
-      }
-
-      li {
-        margin: 10px 0;
-      }
-      li > a:hover {
-        color: var(--accent-color);
-      }
-      a {
-        text-decoration: none;
-        color: var(--primary-color);
-        font-weight: bold;
-        transition: color 0.3s ease-in-out;
-      }
-    }
-
-    .contact-btn {
-      background-color: var(--primary-color);
-      color: var(--secondary-color);
-      padding: 10px 20px;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-
-      @media only screen and (max-width: 768px) {
-        display: none;
-      }
-    }
-
-    .menu-toggle {
+    @media only screen and (max-width: 768px) {
       display: none;
-      cursor: pointer;
-      margin-left: auto;
-      padding: 5px;
-      background-color: transparent;
-      border: none;
-      @media only screen and (max-width: 768px) {
-        display: block;
-      }
+      flex-direction: column;
+      position: absolute;
+      top: 100px;
+      left: 0;
+      width: 100%;
+      background: rgba(255, 255, 255, 0.2);
+      -webkit-backdrop-filter: blur(30px);
+      backdrop-filter: blur(30px);
+      border-radius: 16px;
+      padding: 10px;
+      text-align: center;
+      z-index: 10;
     }
 
-    .bar {
-      width: 25px;
-      height: 3px;
-      background-color: var(--primary-color);
-      margin: 5px 0;
-      transition: 0.4s;
+    &.show {
+      display: flex;
     }
 
-    .menu-toggle.open .bar:nth-child(1) {
-      transform: rotate(-45deg) translate(-5px, 6px);
+    li {
+      margin: 10px 0;
     }
 
-    .menu-toggle.open .bar:nth-child(2) {
-      opacity: 0;
+    li > a:hover {
+      color: var(--accent-color);
     }
 
-    .menu-toggle.open .bar:nth-child(3) {
-      transform: rotate(45deg) translate(-5px, -6px);
+    a {
+      text-decoration: none;
+      color: var(--primary-color);
+      font-weight: bold;
+      transition: color 0.3s ease-in-out;
     }
-  `;
-
-const HeroSection = styled.div`
-    position: absolute;
-    bottom: 0;
-    left: 30%;
-    transform: translate(-25%, -50%);
-    text-align: left;
-    color: white;
-
-    h1 {
-      font-size: 3rem;
-      margin-bottom: 1rem;
-    }
-
-    p {
-      font-size: 1.5rem;
-      margin-bottom: 2rem;
-    }
-
-     @media only screen and (max-width: 768px) {
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
   }
 
-  /* h1 {
-    font-size: 2rem;
+  .contact-btn {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+
+    @media only screen and (max-width: 768px) {
+      display: none;
+    }
+  }
+
+  .menu-toggle {
+    display: none;
+    cursor: pointer;
+    margin-left: auto;
+    padding: 5px;
+
+    @media only screen and (max-width: 768px) {
+      display: block;
+    }
+  }
+
+  .bar {
+    width: 25px;
+    height: 3px;
+    background-color: var(--primary-color);
+    margin: 5px 0;
+    transition: 0.4s;
+  }
+
+  .menu-toggle.open .bar:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 6px);
+  }
+
+  .menu-toggle.open .bar:nth-child(2) {
+    opacity: 0;
+  }
+
+  .menu-toggle.open .bar:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -6px);
+  }
+`;
+
+const HeroSection = styled.div`
+  position: absolute;
+  top: 70%;
+  left: 20%;
+  transform: translate(-25%, -50%);
+  text-align: left;
+  color: white;
+
+  h1 {
+    font-size: 3rem;
     margin-bottom: 1rem;
-  } */
+  }
 
   p {
     font-size: 1.5rem;
     margin-bottom: 2rem;
   }
-  `;
 
+  @media only screen and (max-width: 768px) {
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+`;
 
 const DownloadBtn = styled.button`
   position: relative;
@@ -288,7 +293,7 @@ const DownloadBtn = styled.button`
   padding: 0;
   font-size: inherit;
   font-family: inherit;
-
+  margin-left: 5%;
   width: 12rem;
   height: auto;
 
@@ -299,7 +304,6 @@ const DownloadBtn = styled.button`
     margin: 0;
     width: 3rem;
     height: 3rem;
-    /* background: #282936; */
     background: var(--primary-color);
     border-radius: 1.625rem;
 
@@ -362,13 +366,38 @@ const DownloadBtn = styled.button`
     color: #fff;
   }
 
-    @media only screen and (max-width: 768px) {
-    width: 100%;
+  @media only screen and (max-width: 768px) {
     margin-top: 20px;
+    margin-left: 0;
   }
 `;
 
 const TextContainer = styled.div`
-width: 80vw;
-margin: auto;
-`
+  display: flex;
+  align-items: center;
+  margin-left: 5%;
+  p {
+    font-size: 16px;
+    margin: 0;
+  }
+
+  h1 {
+    font-size: 102px;
+    font-family: 'Silver Queen Regular';
+    font-weight: 100;
+  }
+
+  @media only screen and (max-width: 768px) {
+    width: 80vw;
+    margin-left: 0;
+    h1 {
+      margin: auto;
+      font-size: 42px !important;
+    }
+
+    p {
+      margin: auto;
+      font-size: 8px;
+    }
+  }
+`;

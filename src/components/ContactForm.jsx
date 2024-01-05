@@ -4,34 +4,35 @@ import { FaEnvelope, FaPhone } from 'react-icons/fa';
 
 const ContactInfo = ({ onClose }) => {
   return (
-    <Overlay>
+    <Overlay role="dialog" aria-labelledby="contactFormHeading" aria-describedby="contactFormDescription">
       <FormWrapper>
-        <CloseButton onClick={onClose}>&times;</CloseButton>
-        <FormHeader>Contact Information</FormHeader>
+        <CloseButton onClick={onClose} role="button" aria-label="Close contact form">&times;</CloseButton>
+        <FormHeader id="contactFormHeading">Contact Information</FormHeader>
 
-        <ContactMethod>
+        <ContactMethod role="group" aria-label="Contact Methods">
           <IconLink href="mailto:kalpana@kllifespace.com">
             <FaEnvelope />
           </IconLink>
-          <ContactDetail >kalpana@kllifespace.com</ContactDetail>
+          <ContactDetail aria-label="Email address">kalpana@kllifespace.com</ContactDetail>
         </ContactMethod>
 
-        <ContactMethod>
+        <ContactMethod role="group" aria-label="Contact Methods">
           <IconLink href="tel:+917901333332">
             <FaPhone />
           </IconLink>
-          <ContactDetail>+91 7901333332</ContactDetail>
+          <ContactDetail aria-label="Phone number">+91 7901333332</ContactDetail>
         </ContactMethod>
 
-        <ContactMethod>
+        <ContactMethod role="group" aria-label="Contact Methods">
           <IconLink href="tel:+917661900900">
             <FaPhone />
           </IconLink>
-          <ContactDetail>+91 7661900900</ContactDetail>
+          <ContactDetail aria-label="Phone number">+91 7661900900</ContactDetail>
         </ContactMethod>
       </FormWrapper>
     </Overlay>
   );
+
 };
 
 const Overlay = styled.div`

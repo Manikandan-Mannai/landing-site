@@ -4,14 +4,16 @@ import { faqData } from './data';
 
 const Container = styled.div`
   width: 100vw;
-  max-height: 100vh;
+  height: 100%;
   padding: 0px 20px; /* Adjust padding for smaller screens */
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   margin-top: 10%;
-
+h1{
+  text-align: center;
+}
   @media only screen and (min-width: 769px) {
     padding: 0px 104px;
   }

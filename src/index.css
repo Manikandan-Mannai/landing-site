@@ -25,21 +25,19 @@ body {
 
 h1{
   font-size: 72px;
-  line-height: 1;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: 'Prettywise Serif', serif;
+/* body {
+  user-select: none;
+} */
+
+* {
+  -webkit-tap-highlight-color: transparent;
 }
 
-@font-face {
-  font-family: 'Prettywise Serif';
-  src: url('../public/fonts/Fontspring-DEMO-prettywise-regular.otf');
+*::before,
+*::after {
+  transition: none !important;
 }
 
 @media only screen and (max-width: 768px) {
@@ -47,3 +45,4 @@ h6 {
     font-size: 42px;
   }
 }
+

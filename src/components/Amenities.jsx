@@ -12,25 +12,26 @@ const Amenities = () => {
 
   return (
     <>
-      <Container id='amenities'>
+      <Container id='amenities' role="region" aria-label="Amenities Section">
         <Left>
           <h1>Amenities</h1>
-          <CardsContainer>
+          <CardsContainer role="group" aria-label="Amenities List">
             {Aminites.map((amenity) => (
-              <Card key={amenity.id} data-aos="fade-right">
+              <Card key={amenity.id} data-aos="fade-right" role="listitem">
                 <p>{amenity.name}</p>
               </Card>
             ))}
           </CardsContainer>
         </Left>
-        <Divider />
-        <Right>
-          <h2>INDUGLE</h2>
-          <h2>N LUXURY, EMBRACE SERENITY</h2>
+        <Divider role="separator" />
+        <Right role="group" aria-label="Amenities Description">
+          <h2>INDULGE</h2>
+          <h2>IN LUXURY, EMBRACE SERENITY</h2>
         </Right>
       </Container>
     </>
   );
+
 };
 
 export default Amenities;

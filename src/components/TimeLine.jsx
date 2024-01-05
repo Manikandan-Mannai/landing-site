@@ -164,6 +164,7 @@ const Right = styled.div`
   align-items: end;
   justify-content: center;
   color: var(--secondary-color);
+
 `;
 
 const Left = styled.div`
@@ -173,6 +174,9 @@ const Left = styled.div`
   align-items: start;
   justify-content: center;
   color: var(--secondary-color);
+        @media only screen and (max-width: 768px) {
+    flex:0 ;
+  }
 `;
 
 const ImageContainer = styled.div`

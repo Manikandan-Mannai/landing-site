@@ -7,7 +7,7 @@ import { FloorImages } from './data';
 
 const Floor = () => {
   const settings = {
-    dots: true,
+    dots: false,
     infinite: true,
     speed: 500,
     autoplay: true,
@@ -55,7 +55,7 @@ export default Floor;
 
 const FloorSection = styled.section`
   width: 100vw;
-  max-height: 100vh;
+  height: 100%;
   padding: 20px 104px;
   display: flex;
   align-items: center;
@@ -69,7 +69,7 @@ const FloorSection = styled.section`
 
 const Left = styled.div`
   p {
-    padding-right: 5%; /* Adjusted for smaller screens */
+    padding-right: 5%; 
     text-align: justify;
   }
   @media only screen and (max-width: 768px) {
@@ -79,7 +79,8 @@ const Left = styled.div`
   }
 `;
 
-const Right = styled.div``;
+const Right = styled.div`
+`;
 
 const Carousel = styled(Slider)`
   width: 100%;

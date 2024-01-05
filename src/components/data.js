@@ -1,11 +1,3 @@
-// import GYM from '../src/assets/icons/gym.png'
-// import Buddha from '../src/assets/icons/buddha.png'
-// import Kids from '../src/assets/icons/kids.png'
-// import Security from '../src/assets/icons/security.png'
-// import Solor from '../src/assets/icons/solor.png'
-// import Nature from '../src/assets/icons/nature.png'
-// import Senior from '../src/assets/icons/senior.png'
-
 import GroundFloorImage from '../assets/ground floor.png';
 import FirstFloorImage from '../assets/first floor.png';
 import SecondFloorImage from '../assets/second floor.png';
@@ -16,6 +8,12 @@ import WestSideStreetView from '../assets/003.jpg'
 import SymmetrycalView from '../assets/004.jpg'
 import TopView from '../assets/005.jpg'
 import AerialView from '../assets/006.jpg'
+
+import Mondelez from '../assets/business/1.png'
+import Hero from '../assets/business/2.png'
+import Isuzu from '../assets/business/3.png'
+import Colgate from '../assets/business/4.png'
+
 
 export const faqData = [
     {
@@ -39,8 +37,6 @@ export const faqData = [
         answer: "The property is equipped with state-of-the-art security systems, including surveillance cameras, secure access points, and on-site security personnel, ensuring the safety of residents.",
     },
 ];
-
-
 
 export const StreetViewData = [
     {
@@ -105,58 +101,89 @@ export const Aminites = [
 export const KeyFeatures = [
     {
         id: 0,
+        image: EastSideStreetView,
         feature: "A PROPERTY IN TADA LIKE NO OTHER",
     },
     {
         id: 1,
+        image: EastSideStreetView,
         feature: "ISRO SPACE STATION LAUNCH PAD VISIBLE FROM OUR SITE.",
     },
     {
         id: 2,
+        image: EastSideStreetView,
         feature: "18 LUXURY VILLAS",
     },
     {
         id: 3,
+        image: EastSideStreetView,
         feature: "SPANNING 21 ACRES LARGEST GATED COMMUNITY IN SRICITY TADA",
     },
     {
         id: 4,
+        image: EastSideStreetView,
         feature: "RENTAL PROPERTY INCOME",
     },
     {
         id: 5,
+        image: EastSideStreetView,
         feature: "EXCELLENT RETURN ON INVESTMENT",
     },
     {
         id: 6,
+        image: EastSideStreetView,
         feature: "OPPOSITE SRICITY ENTRANCE",
     },
     {
         id: 7,
+        image: EastSideStreetView,
         feature: "150+ COMPANIES WITHIN 5 MINS",
     },
     {
         id: 8,
+        image: EastSideStreetView,
         feature: "ACCESS TO THE BEST SCHOOLS AND INSTITUTIONS",
     },
     {
         id: 9,
+        image: EastSideStreetView,
         feature: "3 BHK & 4 BHK",
     },
     {
         id: 10,
+        image: EastSideStreetView,
         feature: "NATURE'S BOUNTY",
     },
     {
         id: 11,
+        image: EastSideStreetView,
         feature: "EXPERT PROPERTY MANAGEMENT",
     },
     {
         id: 12,
+        image: EastSideStreetView,
         feature: "ACCESS TO TOURIST ATTRACTIONS",
     },
 ];
 
+export const businessCard = [
+    {
+        id: 0,
+        image: Mondelez,
+    },
+    {
+        id: 1,
+        image:Hero,
+    },
+    {
+        id: 2,
+        image:Isuzu
+    },
+    {
+        id: 3,
+        image:Colgate
+    },
+];
 
 export const FloorImages = [
     {
@@ -199,125 +226,71 @@ export const LocationData = {
     }
 };
 
-
-// data.js
 export const cardData = [
     {
         id: 1,
-        front: {
-            title: 'PAINTING',
-        },
-        back: {
-            description: 'Internal: Apply putty over primer, followed by two coats of Asian Paints Royale emulsion for internal walls. For Sal doors, use wood primer and two coats of Asian Paints Enamel paint. External: Apply primer and two coats of Asian Ultima for external walls, using Ultima for textured surfaces on the front elevation.',
-        },
+        title: 'PAINTING',
+        description: 'Apply putty over primer, followed by two coats of Asian Paints Royale emulsion for internal walls. For Sal doors, use wood primer and two coats of Asian Paints Enamel paint. For external walls, apply primer and two coats of Asian Ultima, using Ultima for textured surfaces on the front elevation.',
     },
     {
         id: 2,
-        front: {
-            title: 'ELECTRICAL FIXTURES',
-        },
-        back: {
-            description: 'Wires: Use BESSCOM-approved ISI Mark top brands like Finolex or V Guard for lighting and heating circuits with ISI-branded PVC conduits. Switches: Install BESSCOM-approved ISI Mark modular switches from reputed brands like Legrand or Crabtree. Air-Conditioning: Provide AC points in all bedrooms and living areas.',
-        },
+        title: 'ELECTRICAL FIXTURES',
+        description: 'Use BESSCOM-approved ISI Mark top brands like Finolex or V Guard for lighting and heating circuits with ISI-branded PVC conduits. Install BESSCOM-approved ISI Mark modular switches from reputed brands like Legrand or Crabtree. Provide AC points in all bedrooms and living areas.',
     },
     {
         id: 3,
-        front: {
-            title: 'LANDSCAPING',
-        },
-        back: {
-            description: 'Professionally planned landscape with appropriate lighting.',
-        },
+        title: 'LANDSCAPING',
+        description: 'Professionally planned landscape with appropriate lighting.',
     },
     {
         id: 4,
-        front: {
-            title: 'KITCHEN',
-        },
-        back: {
-            description: 'Use 20 mm thick Engineered Quartz Granite for kitchen countertops, and provide stainless steel sinks with drain boards.',
-        },
+        title: 'KITCHEN',
+        description: 'Use 20 mm thick Engineered Quartz Granite for kitchen countertops and provide stainless steel sinks with drain boards.',
     },
     {
         id: 5,
-        front: {
-            title: 'STRUCTURE',
-        },
-        back: {
-            description: '8-inch AAC/Solid Block for structure, with 4-inch inside.',
-        },
+        title: 'STRUCTURE',
+        description: '8-inch AAC/Solid Block for structure, with 4-inch inside.',
     },
     {
         id: 6,
-        front: {
-            title: 'FLOORING',
-        },
-        back: {
-            description: 'Use EXXARO Brand or equivalent Digital Vitrified Tiles for living areas and bedrooms. Laminated wooden flooring for the master bedroom.',
-        },
+        title: 'FLOORING',
+        description: 'Use EXXARO Brand or equivalent Digital Vitrified Tiles for living areas and bedrooms. Install laminated wooden flooring for the master bedroom.',
     },
     {
         id: 7,
-        front: {
-            title: 'STAIRCASE',
-        },
-        back: {
-            description: 'Use 20 mm thick high-quality granite for the staircase with wood railings and glass & SS brackets.',
-        },
+        title: 'STAIRCASE',
+        description: 'Use 20 mm thick high-quality granite for the staircase with wood railings and glass & SS brackets.',
     },
     {
         id: 8,
-        front: {
-            title: 'DADOING',
-        },
-        back: {
-            description: 'High-quality glazed ceramic tiles for kitchen dadoing and bathrooms.',
-        },
+        title: 'DADOING',
+        description: 'Use high-quality glazed ceramic tiles for kitchen dadoing and bathrooms.',
     },
     {
         id: 9,
-        front: {
-            title: 'DOORS',
-        },
-        back: {
-            description: 'Main door: Teak wood frame with teak shutter. Other doors: Good quality Sal wood frame with solid door shutters.',
-        },
+        title: 'DOORS',
+        description: 'Main door: Teak wood frame with teak shutter. Other doors: Good quality Sal wood frame with solid door shutters.',
     },
     {
         id: 10,
-        front: {
-            title: 'WINDOWS',
-        },
-        back: {
-            description: 'Three-track high-quality UPVC frames with mosquito mesh shutters.',
-        },
+        title: 'WINDOWS',
+        description: 'Three-track high-quality UPVC frames with mosquito mesh shutters.',
     },
     {
         id: 11,
-        front: {
-            title: 'VENTILATORS',
-        },
-        back: {
-            description: 'High-quality UPVC frames with glass louvers.',
-        },
+        title: 'VENTILATORS',
+        description: 'High-quality UPVC frames with glass louvers.',
     },
     {
         id: 12,
-        front: {
-            title: 'SANITARY FITTINGS',
-        },
-        back: {
-            description: 'Use high-quality sanitary fittings like KOHLER Brand or equivalent for bathrooms.',
-        },
+        title: 'SANITARY FITTINGS',
+        description: 'Use high-quality sanitary fittings like KOHLER Brand or equivalent for bathrooms.',
     },
     {
         id: 13,
-        front: {
-            title: 'SECURITY NETWORK',
-        },
-        back: {
-            description: 'Install CCTV cameras in identified common areas and the clubhouse, with monitoring and recording from the security/maintenance office.',
-        },
+        title: 'SECURITY NETWORK',
+        description: 'Install CCTV cameras in identified common areas and the clubhouse, with monitoring and recording from the security/maintenance office.',
     },
 ];
 
