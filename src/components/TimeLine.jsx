@@ -8,6 +8,7 @@ import Companies from '../assets/companies.png';
 import School from '../assets/school.png';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import FooterBackground from '../assets/backgrounds/footer-background.png'
 
 const TimeLine = () => {
   useEffect(() => {
@@ -116,7 +117,10 @@ const TimeLine = () => {
 export default TimeLine;
 
 const ParentContainer = styled.div`
-  background-color: var(--primary-color);
+  /* background-color: var(--primary-color); */
+    background-image: url(${FooterBackground});
+  background-size: cover;
+  background-position: center;
   h1{
     text-align: center;
     color: var(--secondary-color);
@@ -135,7 +139,6 @@ const Container = styled.div`
   width: 82vw;
   margin: 0 auto;
   padding: 20px;
-  background-color: var(--primary-color);
   h2{
     font-size: 46px;
   }
@@ -148,7 +151,7 @@ const Box = styled.div`
   justify-content: center;
   border: 1px solid white;
   margin: 20px 0;
-
+background-color: var(--primary-color); 
 `;
 
 const Divider = styled.div`

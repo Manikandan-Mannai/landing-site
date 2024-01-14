@@ -163,7 +163,7 @@ const StyledNavbar = styled.nav`
   box-sizing: border-box;
 
   .logo {
-    width: 50px;
+    width: 40px;
   }
 
   img {
@@ -179,7 +179,7 @@ const StyledNavbar = styled.nav`
       display: none;
       flex-direction: column;
       position: absolute;
-      top: 100px;
+      top: 112px;
       left: 0;
       width: 100%;
       background: rgba(255, 255, 255, 0.2);
@@ -232,6 +232,8 @@ const StyledNavbar = styled.nav`
 
     @media only screen and (max-width: 768px) {
       display: block;
+    background: transparent;
+    border: none;
     }
   }
 
@@ -296,6 +298,7 @@ const DownloadBtn = styled.button`
   margin-left: 5%;
   width: 12rem;
   height: auto;
+  
 
   .circle {
     transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
@@ -376,6 +379,7 @@ const TextContainer = styled.div`
   display: flex;
   align-items: center;
   margin-left: 5%;
+  width: 70vw;
   p {
     font-size: 16px;
     margin: 0;
@@ -383,7 +387,6 @@ const TextContainer = styled.div`
 
   h1 {
     font-size: 102px;
-    font-family: 'Silver Queen Regular';
     font-weight: 100;
   }
 

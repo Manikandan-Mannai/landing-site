@@ -72,7 +72,7 @@ const Image = styled.img`
   height: 100%;
   object-fit: contain;
   padding: 5px;
-  border: 12px solid var(--primary-color);
+  border: 8px solid var(--primary-color);
   transition: border-color 0.3s ease-in-out;
   `;
 
@@ -93,5 +93,7 @@ const Line = styled.div`
   width: 100px;
   height: 10px;
   background-color: var(--primary-color);
-
+@media only screen and (max-width: 768px) {
+  margin-left: 73%;
+}
 `;
